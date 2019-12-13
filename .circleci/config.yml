@@ -46,6 +46,8 @@ jobs:
           name: Setup Org
           command: |
             echo 'Running tests'
+            echo $HUB_CONSUMER_KEY
+            echo $HUB_SFDC_USER
             sfdx force:auth:jwt:grant --clientid $HUB_CONSUMER_KEY --jwtkeyfile assets/server.key --username $HUB_SFDC_USER --setdefaultdevhubusername -a hub
             echo 'first step passed'
             echo 'Show connected org name list'
